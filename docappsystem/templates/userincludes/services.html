@@ -1,0 +1,217 @@
+{% extends 'userbase.html' %}
+{% load static %}
+
+{% block content %}
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.4.0/fonts/remixicon.css" rel="stylesheet"/>
+
+<style>
+    header {
+    background-color:#20B2AA;
+    }
+
+     .container {
+        width: 100%;
+        height:100vh;
+        padding: 20px;
+    }
+    h1 {
+        text-align: center;
+        color:blue;
+    }
+    .container-in {
+        width: 90%;
+        height:92vh;
+        margin-left:80px;
+        margin-top: 40px;
+        display: flex;
+        margin-right:10px;
+    }
+    .con-one,.con-two {
+        width: 50%;
+        height: 92vh;
+    }
+    .one-one,.two-two,.three-three,.four-four {
+        width: 100%;
+        height: 23vh;
+        display: flex;
+    }
+    .box1 {
+        width: 30%;
+        height: 23vh;
+    }
+    .box2 {
+        width: 70%;
+        height: 23vh;
+        padding-left: 5px;
+        color: blue;
+    }
+    p {
+        color: gray;
+        padding-top: 5px;
+        font-size:13px;
+    }
+    .box1 img {
+        width: 100%;
+        height:20vh;
+    }
+    .footer {
+  background-color: blue;
+  color:white;
+  margin-top:50px;
+}
+
+.footer__container {
+  display: grid;
+  grid-template-columns: 400px repeat(3, 1fr);
+  gap: 2rem;
+}
+
+.footer__col h3 {
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+  font-weight: 600;
+  color:white;
+}
+
+.footer__col h3 span {
+  color:white;
+}
+
+.footer__col h4 {
+  margin-bottom: 1rem;
+  font-size: 1.2rem;
+  font-weight: 600;
+  color:white;
+}
+
+.footer__col p {
+  margin-bottom: 1rem;
+  color:white;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.footer__col p:hover {
+  color: orange;
+}
+
+.footer__col i {
+  color: white;
+}
+
+.footer__bar {
+  background-color: blue;
+}
+
+.footer__bar__content {
+  max-width: var(--max-width);
+  margin: auto;
+  padding: 0.5rem 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+}
+
+.footer__bar__content p {
+  font-size: 0.8rem;
+  color: var(--white);
+}
+
+.footer__socials {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  font-size: 1rem;
+  color: white;
+  cursor: pointer;
+}
+
+</style>
+<body>
+
+    <div class="container">
+        <h1>Our Services</h1>
+        <div class="container-in">
+            <div class="con-one">
+                <div class="one-one">
+                    <div class="box1">
+                        <img src="{% static 'img/onlinedoctor.jpg' %}" alt="Myimage"/>
+
+                    </div>
+                    <div class="box2">
+                        <h3>Easy Online Consultations</h3>
+                        <p>Over 25 specialities guided by best in class doctors for effective care around the clock</p>
+                    </div>
+                </div>
+                <div class="two-two">
+                    <div class="box1">
+                        <img src="{% static 'img/labtest.jpg' %}" alt="Myimage"/>
+                    </div>
+                    <div class="box2">
+                        <h3>Lab Tests at Home</h3>
+                        <p>Disscounts upto 20% on NABL-accredited lab tests and at-home tests in multiple cities</p>
+                    </div>
+                </div>
+                <div class="three-three">
+                    <div class="box1">
+                        <img src="{% static 'img/ambulance.jpg' %}" alt="Myimage"/>
+                    </div>
+                    <div class="box2">
+                        <h3>SOS Ambulance Service</h3>
+                        <p>24/7 round the clock Ambulatory services along with equipped medical staff</p>
+                    </div>
+                </div>
+                <div class="four-four">
+                    <div class="box1">
+                        <img src="{% static 'img/covid.jpg' %}" alt="Myimage"/>
+                    </div>
+                    <div class="box2">
+                        <h3>Covid Care Packages</h3>
+                        <p>Covid-19 specific online consultations,lab tests,medical equipment,SOS assistance and home care services</p>
+                    </div>
+                </div>
+            </div>
+            <div class="con-two">
+                <div class="one-one">
+                    <div class="box1">
+                        <img src="{% static 'img/pharmacy.jpg' %}" alt="Myimage"/>
+                    </div>
+                    <div class="box2">
+                        <h3>Online Pharmacy</h3>
+                        <p>COVID-19 essentials and self-test kits provided,along with access to a large inventory for medicines</p>
+                    </div>
+                </div>
+                <div class="two-two">
+                    <div class="box1">
+                        <img src="{% static 'img/grouphealth.jpg' %}" alt="Myimage"/>
+                    </div>
+                    <div class="box2">
+                        <h3>Group Health Insurance</h3>
+                        <p>Over 500+ day care producers covered with a variety of payment options, for employess and family members</p>
+                    </div>
+                </div>
+                <div class="three-three">
+                    <div class="box1">
+                        <img src="{% static 'img/mentalwellbeing.png' %}" alt="Myimage"/>
+                    </div>
+                    <div class="box2">
+                        <h3>Mental Wellbeing Solutions</h3>
+                        <p>Specially focused Mental Wellness plans available with regular informative webinars and constant support</p>
+                    </div>
+                </div>
+                <div class="four-four">
+                    <div class="box1">
+                        <img src="{% static 'img/engagementactivities.jpg' %}" alt="Myimage"/>
+                    </div>
+                    <div class="box2">
+                        <h3>Engagement Activities & Gamification</h3>
+                        <p>Webinars and other knowledge-building sessions,peer-group challenges and other employee engagement activities</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+{% endblock %}

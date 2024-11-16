@@ -1,0 +1,537 @@
+{% extends 'userbase.html' %}
+{% load static %}
+
+{% block content %}
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@3.4.0/fonts/remixicon.css" rel="stylesheet"/>
+
+<style>
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.section__container {
+  max-width: var(--max-width);
+  margin: auto;
+  padding: 5rem 1rem;
+}
+
+.section__header {
+  margin-bottom: 0.5rem;
+  font-size: 2rem;
+  font-weight: 600;
+  color: var(--text-dark);
+}
+
+.btn  {
+  padding: 0.75rem 2rem;
+  outline: none;
+  border: none;
+  font-size: 1rem;
+  white-space: nowrap;
+  color: var(--white);
+  background-color: blue;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.btn a {
+color:white;
+}
+
+
+img {
+  width: 100%;
+  display: flex;
+}
+
+a {
+  text-decoration: none;
+}
+
+html,
+body {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+}
+
+.nav__container {
+  padding: 2rem 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+    background-color:blue;
+}
+
+.nav__logo {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--white);
+}
+
+.nav__logo span {
+  color: var(--secondary-color);
+}
+
+.nav__links {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.link a {
+  padding: 0.5rem;
+  color: var(--primary-color-light);
+}
+
+.link a:hover {
+  color: var(--white);
+}
+
+
+.about__container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+  align-items: center;
+}
+
+.about__content p {
+  margin-bottom: 1rem;
+  color: var(--text-light);
+}
+
+.about__image img {
+  max-width: 400px;
+  margin: auto;
+  border-radius: 10px;
+}
+
+.why__container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+  align-items: center;
+  color:orange;
+}
+
+.why__image img {
+  max-width: 400px;
+  margin: auto;
+  border-radius: 10px;
+}
+
+.why__content p {
+  color: var(--text-light);
+}
+
+.why__grid {
+  margin-top: 4rem;
+  display: grid;
+  grid-template-columns: 80px auto;
+  gap: 2rem;
+}
+
+.why__grid span {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2.5rem;
+  color: blue;
+  border-radius: 10px;
+  box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.1);
+}
+
+.why__grid h4 {
+  margin-bottom: 0.5rem;
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: blue;
+}
+
+.why__grid p {
+  color: var(--text-light);
+}
+.footer {
+  background-color: blue;
+  color:white;
+}
+
+.footer__container {
+  display: grid;
+  grid-template-columns: 400px repeat(3, 1fr);
+  gap: 2rem;
+}
+
+.footer__col h3 {
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+  font-weight: 600;
+  color:white;
+}
+
+.footer__col h3 span {
+  color:white;
+}
+
+.footer__col h4 {
+  margin-bottom: 1rem;
+  font-size: 1.2rem;
+  font-weight: 600;
+  color:white;
+}
+
+.footer__col p {
+  margin-bottom: 1rem;
+  color:white;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.footer__col p:hover {
+  color: orange;
+}
+
+.footer__col i {
+  color: white;
+}
+
+.footer__bar {
+  background-color: blue;
+}
+
+.footer__bar__content {
+  max-width: var(--max-width);
+  margin: auto;
+  padding: 0.5rem 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+}
+
+.footer__bar__content p {
+  font-size: 0.8rem;
+  color: var(--white);
+}
+
+.footer__socials {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  font-size: 1rem;
+  color: white;
+  cursor: pointer;
+}
+
+@media (width < 900px) {
+  .service__grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+
+  .about__container {
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  .about__image {
+    grid-area: 1/1/2/2;
+
+  }
+
+  .about__content {
+    text-align: center;
+  }
+
+  .why__container {
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  .why__content {
+    text-align: center;
+  }
+
+  .why__grid {
+    text-align: left;
+  }
+
+  .doctors__grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+
+  .footer__container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (width < 780px) {
+  .nav__links {
+    display: none;
+  }
+
+  .header__container {
+    flex-direction: column;
+  }
+}
+
+@media (width < 600px) {
+  .service__header {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .service__grid {
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  .why__grid {
+    column-gap: 1rem;
+  }
+
+  .doctors__header {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .doctors__grid {
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  .footer__bar__content {
+    flex-direction: column;
+    gap: 1rem;
+  }
+}
+
+
+
+    .container-in {
+            width:200%;
+            height:100vh;
+            }
+        .container1 {
+            max-width: 400px;
+            height:12vh;
+            margin-left:370px;
+            margin-top:70px;
+            background-color: blue;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+        }
+
+        h2 {
+            text-align: center;
+            color: #333;
+        }
+        .container1 h3 {
+            text-align:center;
+        }
+        .search-bar {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .container1 h3 {
+            padding-left: 5px;
+        }
+
+        .container1 input {
+            width: 90%;
+            border: 2px solid white;
+        }
+
+        .result {
+            font-size: 18px;
+            color: white;
+            margin-top: 10px;
+            text-align: center;
+        }
+
+        .no-result {
+            color: black;
+            text-align: center;
+        }
+
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            padding: 20px;
+            margin-top:40px;
+        }
+
+        .card {
+            width: 220px;
+            padding: 20px;
+            border: 1px solid #20B2AA;
+            border-radius: 8px;
+            text-align: center;
+            box-shadow: 0 4px 8px #008080;
+            padding-right: 40px;
+        }
+
+        .card h2 {
+            margin-bottom: 10px;
+        }
+
+        .card img {
+            width: 80px;
+            height: 80px;
+            margin-bottom: 10px;
+        }
+
+        .card p {
+            line-height: 1.5;
+            font-size: 14px;
+        }
+
+        .other-specialties {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        .review-card {
+            width: 300px;
+            padding: 20px;
+            border: 1px solid white;
+            border-radius: 8px;
+            text-align: center;
+            box-shadow: 0 4px 6px blue;
+            padding-right: 40px;
+        }
+
+        .review-card h3 {
+            margin-bottom: 10px;
+        }
+
+        .review-card p {
+            line-height: 1.5;
+            font-size: 14px;
+        }
+        .rating {
+            font-size: 18px;
+            color: #FFD700;
+            margin-top: 10px;
+            text-align: center;
+        }
+    </style>
+
+<section class="section__container about__container" id="about">
+      <div class="about__content">
+        <h2 class="section__header" style="color:blue">About Us</h2>
+        <p>
+          Welcome to our healthcare website, your one-stop destination for
+          reliable and comprehensive health care information. We are committed
+          to promoting wellness and providing valuable resources to empower you
+          on your health journey.
+        </p>
+        <p>
+          Explore our extensive collection of expertly written articles and
+          guides covering a wide range of health topics. From understanding
+          common medical conditions to tips for maintaining a healthy lifestyle,
+          our content is designed to educate, inspire, and support you in making
+          informed choices for your health.
+        </p>
+        <p>
+          Discover practical health tips and lifestyle advice to optimize your
+          physical and mental well-being. We believe that small changes can lead
+          to significant improvements in your quality of life, and we're here to
+          guide you on your path to a healthier and happier you.
+        </p>
+      </div>
+      <div class="about__image">
+        <img src="{% static 'img/aboutus.png' %}" alt="about" />
+      </div>
+    </section>
+
+    <section class="section__container why__container" id="blog">
+      <div class="why__image">
+        <img src="{% static 'img/choose-us.jpg' %}" alt="why choose us" />
+      </div>
+      <div class="why__content">
+        <h2 class="section__header" style="color:blue">Why Choose Us</h2>
+        <p>
+          With a steadfast commitment to your well-being, our team of highly
+          trained healthcare professionals ensures that you receive nothing
+          short of exceptional patient experiences.
+        </p>
+        <div class="why__grid">
+          <span><i class="ri-hand-heart-line"></i></span>
+          <div>
+            <h4>Intensive Care</h4>
+            <p>
+              Our Intensive Care Unit is equipped with advanced technology and
+              staffed by team of professionals
+            </p>
+          </div>
+          <span><i class="ri-truck-line" style="color:blue"></i></span>
+          <div>
+            <h4>Free Ambulance Car</h4>
+            <p>
+              A compassionate initiative to prioritize your health and
+              well-being without any financial burden.
+            </p>
+          </div>
+          <span><i class="ri-hospital-line"></i></span>
+          <div>
+            <h4>Medical and Surgical</h4>
+            <p>
+              Our Medical and Surgical services offer advanced healthcare
+              solutions to address medical needs.
+            </p>
+          </div>
+        </div>
+      </div>
+        <div class="container-in">
+        <div class="container1" style="height:20%">
+        <h2 style="color:white">Reviews</h2>
+        <h3 style="color:white">What our patients say about us</h3>
+    </div>
+
+    <div class="container">
+        <div class="review-card">
+            <h3>Excellent Service</h3>
+            <p>I had a great experience with the doctor. The staff was very friendly and helpful.</p>
+            <div class="rating">
+                <span>&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+            </div>
+        </div>
+        <div class="review-card">
+            <h3>Very Satisfied</h3>
+            <p>The doctor was very knowledgeable and explained everything clearly. I would definitely recommend.</p>
+            <div class="rating">
+                <span>&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+            </div>
+        </div>
+        <div class="review-card">
+            <h3>Great Experience</h3>
+            <p>The clinic was very clean and well-organized. The staff was very friendly and helpful.</p>
+            <div class="rating">
+                <span>&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+            </div>
+        </div>
+        <div class="review-card">
+            <h3>Very Happy</h3>
+            <p>The doctor was very kind and understanding. I would definitely recommend.</p>
+            <div class ="rating">
+                <span>&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+            </div>
+        </div>
+    </div>
+</div>
+    </section>
+
+
+
+{% endblock %}
